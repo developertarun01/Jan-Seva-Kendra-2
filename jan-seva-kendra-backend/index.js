@@ -10,7 +10,7 @@ const fs = require("fs");
 require("dotenv").config();
 
 // Import the Service model
-const Service = require("./Service");
+const Service = require("./models/Service");
 
 // Initialize Express
 const app = express();
