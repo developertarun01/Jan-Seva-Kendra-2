@@ -42,11 +42,10 @@ const s3 = new AWS.S3({
 });
 
 // File upload configuration using multer
+const storage = multer.memoryStorage();
 const upload = multer({ dest: "uploads/" });
 
-// API Routes
-
-// Submit form with document upload
+// Upload files directly to S3
 app.post("/api/submit-form", upload.array("documents"), async (req, res) => {
     const { fullName, mobile, email, services } = req.body;
     const files = req.files;
@@ -54,11 +53,11 @@ app.post("/api/submit-form", upload.array("documents"), async (req, res) => {
     try {
         const uploadedFiles = await Promise.all(
             files.map(async (file) => {
-                const fileContent = fs.readFileSync(file.path);
                 const params = {
                     Bucket: process.env.AWS_BUCKET_NAME,
-                    Key: file.originalname,
-                    Body: fileContent,
+                    Key: `uploads/${Date.now()}_${file.originalname}`, // Create unique file name
+                    Body: file.buffer, // Use file buffer from memory storage
+                    ContentType: file.mimetype,
                 };
 
                 const uploadResponse = await s3.upload(params).promise();
