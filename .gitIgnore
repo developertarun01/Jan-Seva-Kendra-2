@@ -1,0 +1,8 @@
+# Ignore environment file in the backend
+jan-seva-kendra-backend/.env
+
+# Ignore node_modules in the backend
+jan-seva-kendra-backend/node_modules/
+
+# Ignore node_modules in the frontend
+jan-seva-kendra-frontend/node_modules/
