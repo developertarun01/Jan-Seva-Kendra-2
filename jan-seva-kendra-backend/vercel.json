@@ -11,5 +11,8 @@
             "src": "/api/(.*)",
             "dest": "/index.js"
         }
-    ]
+    ],
+    "rewrites": [
+    { "source": "/api/:path*", "destination": "https://jan-seva-kendra-eight.vercel.app/:path*" }
+  ]
 }
