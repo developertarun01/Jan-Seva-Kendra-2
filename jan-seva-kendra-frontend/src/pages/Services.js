@@ -11,7 +11,7 @@ function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get("https://jan-seva-kendra-api.vercel.app/api/services");
+        const response = await axios.get("https://jan-seva-kendra-eight.vercel.app/api/services");
         setServices(response.data);
       } catch (error) {
         console.error("Error fetching services:", error);
