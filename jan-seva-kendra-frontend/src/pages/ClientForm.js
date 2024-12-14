@@ -17,7 +17,7 @@ function ClientForm() {
   useEffect(() => {
     const fetchService = async () => {
       try {
-        const response = await axios.get(`https://jan-seva-kendra-api.vercel.app/api/services/${serviceId}`);
+        const response = await axios.get(`https://jan-seva-kendra-eight.vercel.app/api/services/${serviceId}`);
         setService(response.data); // Set the service data
         // Initialize documents array for uploading
         setFormData((prev) => ({
@@ -60,7 +60,7 @@ function ClientForm() {
 
     try {
       alert("Submitting your Form, Please Wait ...")
-      const response = await fetch("https://jan-seva-kendra-api.vercel.app/api/submit-form", {
+      const response = await fetch("https://jan-seva-kendra-eight.vercel.app/api/submit-form", {
         method: "POST",
         body: data,
       });

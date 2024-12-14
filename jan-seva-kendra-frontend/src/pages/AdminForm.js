@@ -58,11 +58,11 @@ function AdminForm() {
     try {
       if (serviceId) {
         // Update service
-        await axios.put(`https://jan-seva-kendra-api.vercel.app/api/services/${serviceId}`, serviceData);
+        await axios.put(`https://jan-seva-kendra-eight.vercel.app/api/services/${serviceId}`, serviceData);
         alert("Service updated successfully!");
       } else {
         // Add new service
-        await axios.post("https://jan-seva-kendra-api.vercel.app/api/services", serviceData);
+        await axios.post("https://jan-seva-kendra-eight.vercel.app/api/services", serviceData);
         alert("Service added successfully!");
       }
       navigate("/");
