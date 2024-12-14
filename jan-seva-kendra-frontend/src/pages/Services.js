@@ -97,7 +97,7 @@ function Services() {
                   <button
                     onClick={async () => {
                       try {
-                        await axios.delete(`https://jan-seva-kendra-api.vercel.app/api/services/${service._id}`);
+                        await axios.delete(`https://jan-seva-kendra-eight.vercel.app/api/services/${service._id}`);
                         setServices((prev) =>
                           prev.filter((item) => item._id !== service._id)
                         );
